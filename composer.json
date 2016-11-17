@@ -3,6 +3,7 @@
     "license": "BSD-3-Clause",
     "description": "An up-to date version of Rockmongo that includes latest patches and bug fixes",
     "require": {
-    	"php": ">=5.3.0"
+    	"php": ">=5.3.0",
+        "alcaeus/mongo-php-adapter": "^1.0"
     }
 }

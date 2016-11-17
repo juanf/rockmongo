@@ -6,6 +6,8 @@
  * @package rockmongo
  */
 
+require_once 'vendor/autoload.php';
+
 /**
 * Defining version number and enabling error reporting
 */
