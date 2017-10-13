@@ -1,6 +1,6 @@
 ===========================================================================
-| This version is an effort to provide up-to date version of Rockmongo by |
-| including latest patches from a number of forks found on Github.        |
+| This version is an effort to provide up-to date version of Rockmongo    |
+| running on PHP7 and including patches from a number of forks on Github. |
 ===========================================================================
 
 Introduction
