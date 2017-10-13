@@ -3,3 +3,5 @@
 .settings/org.eclipse.php.core.prefs
 .DS_Store
 /config.php
+vendor/
+logs/
