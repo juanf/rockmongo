@@ -435,7 +435,7 @@ class DbController extends BaseController {
 		
 		if ($this->isPost()) {
 			$db = $this->_mongo->selectDB($this->db);
-			$db->createCollection($this->name, $this->isCapped, $this->size, $this->max);
+			$db->createCollection($this->name, ['capped' => $this->isCapped, 'size' => $this->size, 'max' => $this->max]);
 			$this->message = "New collection is created.";
 			
 			//add index

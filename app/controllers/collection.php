@@ -1010,7 +1010,7 @@ window.parent.frames["left"].location.reload();
 			
 			//create new collection
 			$db = $this->_mongo->selectDB($this->db);
-			$db->createCollection($this->collection, $this->isCapped, $this->size, $this->max);
+			$db->createCollection($this->collection, ['capped' => $this->isCapped, 'size' => $this->size, 'max' => $this->max]);
 			
 			//copy data to new collection
 			if (!$this->_copyCollection($db, $bkCollection, $this->collection, true)) {
