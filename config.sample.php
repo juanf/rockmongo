@@ -18,10 +18,10 @@ $i = 0;
 * 
 * @see more details at http://rockmongo.com/wiki/configuration?lang=en_us
 */
-$MONGO["servers"][$i]["mongo_name"] = "Localhost";//mongo server name
+$MONGO["servers"][$i]["mongo_name"] = getenv('DB_NAME') ?: "localhost";//mongo server name
 //$MONGO["servers"][$i]["mongo_sock"] = "/var/run/mongo.sock";//mongo socket path (instead of host and port)
-$MONGO["servers"][$i]["mongo_host"] = "127.0.0.1";//mongo host
-$MONGO["servers"][$i]["mongo_port"] = "27017";//mongo port
+$MONGO["servers"][$i]["mongo_host"] = getenv('DB_HOST') ?: "127.0.0.1";//mongo host
+$MONGO["servers"][$i]["mongo_port"] = getenv('DB_PORT') ?: "27017";//mongo port
 $MONGO["servers"][$i]["mongo_timeout"] = 0;//mongo connection timeout
 //$MONGO["servers"][$i]["mongo_db"] = "MONGO_DATABASE";//default mongo db to connect, works only if mongo_auth=false
 //$MONGO["servers"][$i]["mongo_user"] = "MONGO_USERNAME";//mongo authentication user name, works only if mongo_auth=false
@@ -51,5 +51,3 @@ $MONGO["servers"][$i]["mongo_port"] = "27017";
 $MONGO["servers"][$i]["control_users"]["admin"] = "password";
 $i ++;
 **/
-
-?>
