@@ -39,12 +39,11 @@ function json_format_html($json)
     $indent_level = 0;
     $in_string = false;
 
-    $len	= mb_strlen($json);
-    $chars	= preg_split('//u',$json, -1, PREG_SPLIT_NO_EMPTY);
+    $len = strlen($json);
 
     for($c = 0; $c < $len; $c++)
     {
-    	$char = $chars[$c];
+        $char = $json[$c];
         switch($char)
         {
             case '{':
@@ -90,7 +89,7 @@ function json_format_html($json)
                 }
                 break;
             case '"':
-                if($c > 0 && $chars[$c-1] != '\\') {
+                if($c > 0 && $json[$c-1] != '\\') {
                     $in_string = !$in_string;
                     if ($in_string) {
                     	$new_json .= "<font color=\"#DD0000\" class=\"string_var\">" . $char;
@@ -172,7 +171,7 @@ function json_format($json)
 
     $json = json_encode($json_obj);
 */
-    $len = mb_strlen($json);
+    $len = strlen($json);
 
     for($c = 0; $c < $len; $c++)
     {
