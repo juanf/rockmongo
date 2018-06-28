@@ -5,3 +5,6 @@
 /config.php
 vendor/
 logs/
+storage/data/
+docker-compose.yaml
+docker-compose.yml

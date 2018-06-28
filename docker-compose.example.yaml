@@ -1,0 +1,21 @@
+version: '2'
+services:
+  rockmongo:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    links:
+      - mongo
+    environment:
+      - DB_NAME=mongo
+      - DB_HOST=mongo
+      - DB_PORT=27017
+    volumes:
+      - .:/var/www
+  # Service for testing
+  mongo:
+    image: "mongo"
+    volumes:
+      - ./storage/data/:/data/db
+    ports:
+      - "127.0.0.1:3001:27017"
